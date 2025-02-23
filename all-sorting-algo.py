@@ -4,6 +4,7 @@
 # Best case --> O(n)
 # same no. of comparisons with selection sort with lesser no. of swaps
 # regardless of items arrangement, bubble sort always makes n-1 passes to sort n elements
+# Space complexity: O(1)
 def bubbleSort(aList):
     for passnum in range(len(aList)-1, 0, -1):
         for i in range(passnum):
@@ -21,6 +22,7 @@ print(aList)
 # Average case --> O(n^2)
 # Best case --> O(n^2)
 # same no. of comparisons with bubble sort with lesser no. of swaps
+# Space complexity: O(1)
 def selectionSort(aList):
     for fillslot in range(len(aList)-1, 0, -1):
         positionOfMax = 0
@@ -40,6 +42,7 @@ print(aList)
 # Average case --> O(n^2)
 # Best case --> O(n) when the list is already sorted
 # uses n-1 passes to sort n elements
+# Space complexity: O(1)
 def insertionSort(aList):
     for index in range(1, len(aList)):
         currentvalue = aList[index]
@@ -57,6 +60,7 @@ print(aList)
 # Divide and conquer algorithm
 # Worst case --> O(nlogn)
 # Average case --> O(nlogn)
+# preferred for Linked List / larger array size
 def mergeSort(arrayA, arrayB):
     arrayC = []
     sizeA = len(arrayA)
@@ -99,6 +103,7 @@ print(mergeSort([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 # Divide and conquer algorithm
 # Worst case --> O(n^2)
 # Average case --> O(nlogn)
+# preferred for Arrays
 def quickSort(array):
     size = len(array)
     if size > 1:
