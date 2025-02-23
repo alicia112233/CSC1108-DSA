@@ -61,7 +61,7 @@ print(aList)
 # Worst case --> O(nlogn)
 # Average case --> O(nlogn)
 # preferred for Linked List / larger array size
-def mergeSort(arrayA, arrayB):
+def merge(arrayA, arrayB):
     arrayC = []
     sizeA = len(arrayA)
     sizeB = len(arrayB)
@@ -75,27 +75,26 @@ def mergeSort(arrayA, arrayB):
             arrayC.append(arrayB[indexB])
             indexB += 1
 
-    for i in range(indexA, sizeA):
-        arrayC.append(arrayA[i])
-
-    for i in range(indexB, sizeB):
-        arrayC.append(arrayB[i])
+    # Add remaining elements
+    arrayC.extend(arrayA[indexA:])
+    arrayC.extend(arrayB[indexB:])
     
     return arrayC
 
 def mergeSort(array):
     size = len(array)
 
-    if size is 1:
+    if size == 1:
         return array
     
-    midIndex = size/2
-    firstHalf = array[0:midIndex]
-    secondHalf = array[midIndex:size]
+    midIndex = size // 2
+    firstHalf = array[:midIndex]
+    secondHalf = array[midIndex:]
 
+    # Recursively sort and merge
     firstHalf = mergeSort(firstHalf)
     secondHalf = mergeSort(secondHalf)
-    return mergeSort(firstHalf, secondHalf)
+    return merge(firstHalf, secondHalf)
 
 print(mergeSort([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
 
