@@ -60,6 +60,7 @@ print(insertionSort(aList))
 # Average case --> O(nlogn)
 # preferred for Linked List / larger array size
 # uses log2(n) passes **round UP
+# Space Complexity: O(n)
 def merge(arrayA, arrayB):
     arrayC = []
     sizeA = len(arrayA)
@@ -103,6 +104,7 @@ print(mergeSort([42, 24, 36, 36, 38, 44, 7, 10, 21, 17]))
 # Average case --> O(nlogn)
 # same for number of passes^
 # preferred for Arrays
+# Space Complexity: O(logN)
 def quickSort(array):
     size = len(array)
     if size > 1:
