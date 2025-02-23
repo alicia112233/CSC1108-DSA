@@ -14,13 +14,13 @@ def bubbleSort(aList):
                 aList[i+1] = temp
 
 aList = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-bubbleSort(aList)
-print(aList)
+print(bubbleSort(aList))
 
 # SELECTION SORT
 # Worst case --> O(n^2)
 # Average case --> O(n^2)
 # Best case --> O(n^2)
+# uses n-1 passes to sort n elements
 # same no. of comparisons with bubble sort with lesser no. of swaps
 # Space complexity: O(1)
 def selectionSort(aList):
@@ -34,8 +34,7 @@ def selectionSort(aList):
         aList[positionOfMax] = temp
 
 aList = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-selectionSort(aList)
-print(aList)
+print(selectionSort(aList))
 
 # INSERTION SORT
 # Worst case --> O(n^2)
@@ -53,14 +52,14 @@ def insertionSort(aList):
         aList[position] = currentvalue
 
 aList = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-insertionSort(aList)
-print(aList)
+print(insertionSort(aList))
 
 # MERGE SORT
 # Divide and conquer algorithm
 # Worst case --> O(nlogn)
 # Average case --> O(nlogn)
 # preferred for Linked List / larger array size
+# uses log2(n) passes **round UP
 def merge(arrayA, arrayB):
     arrayC = []
     sizeA = len(arrayA)
@@ -96,12 +95,13 @@ def mergeSort(array):
     secondHalf = mergeSort(secondHalf)
     return merge(firstHalf, secondHalf)
 
-print(mergeSort([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+print(mergeSort([42, 24, 36, 36, 38, 44, 7, 10, 21, 17]))
 
 # QUICK SORT:
 # Divide and conquer algorithm
 # Worst case --> O(n^2)
 # Average case --> O(nlogn)
+# same for number of passes^
 # preferred for Arrays
 def quickSort(array):
     size = len(array)
@@ -121,3 +121,5 @@ def partition(array):
             array[index], array[pivotIndex] = array[pivotIndex], array[index]
     array[0], array[pivotIndex] = array[pivotIndex], array[0]
     return pivotIndex
+
+print(quickSort([42, 24, 36, 36, 38, 44, 7, 10, 21, 17]))
