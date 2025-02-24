@@ -19,8 +19,8 @@ b. Sorted array of N elements
 - Worst Case: O(logN) - when the element is found **after** the **maximum** number of divisions or not found at all.
 
 Given a hash table of **size 13**, show the contents of your hash table after inserting the values {8, 2, 7, 20, 33, 15, 19, 34, 12, 21} using the following:
-<br>a. **separate chaining** with hash function h(x) = x mod 13.
-<br>b. **open addressing** with linear probing with hash function h(x) = x mod 13
+<br>a. **Separate Chaining** with hash function h(x) = x mod 13.
+<br>b. **Open Addressing** with linear probing with hash function h(x) = x mod 13
 
 a) Separate Chaining
 <br>Hash Values:
@@ -138,7 +138,7 @@ ii. If the hash table is designed to try up to 10 probes (i.e. up to h(x)+10^2),
 - Index 12: [77]
 
 <br>b. Using **Doubling Hashing** with a hash table of **size 13**, a hash function **h(x)=x mod 13**, an incremental hash function of **g(x)=(x mod 7) +1**,
-i. Show the contents of the hash table after inserting the following sequence of values: 77, 94, 73, 90, 55, 51, 54
+<br>i. Show the contents of the hash table after inserting the following sequence of values: 77, 94, 73, 90, 55, 51, 54
 <br>Hash Values:
 - h(77) = 77 % 13 = 12 → Insert at index 12
 - h(94) = 94 % 13 = 3 → Insert at index 3
